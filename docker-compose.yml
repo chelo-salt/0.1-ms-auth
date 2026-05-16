@@ -1,0 +1,24 @@
+version: '3.8'
+
+services:
+  db-auth:
+    image: mysql:8.0
+    container_name: ms-auth-db
+    ports:
+      - "3306:3306"
+    environment:
+      MYSQL_ROOT_PASSWORD: rootpass123
+      MYSQL_DATABASE: db_municipalidad_auth
+      MYSQL_USER: usuario
+      MYSQL_PASSWORD: pass123
+    volumes:
+      - mysql_auth_data:/var/lib/mysql
+    networks:
+      - muni-network
+
+volumes:
+  mysql_auth_data:
+
+networks:
+  muni-network:
+    driver: bridge
