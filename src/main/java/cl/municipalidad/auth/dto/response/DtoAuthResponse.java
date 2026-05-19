@@ -10,4 +10,7 @@ import lombok.NoArgsConstructor;
 public class DtoAuthResponse {
 
     private String token;
+    private String username;
+    private String rol;
+    private String estado;
 }
